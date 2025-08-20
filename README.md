@@ -1,4 +1,4 @@
-# Simple Dashboard with local storage Auth
+# TAG-CS TASK Simple Dashboard with local storage Auth
 
 ## Installed React router
 
@@ -25,6 +25,10 @@
     - created sotre, userslice to store user related details
     - Added the user authenticated state to the redux
 
+## Added ProtectRoutes for dashboard
+
+    - user can logout from Appbar
+
 ## Create Custom Hooks
 
     - for fetch the Posts
@@ -32,3 +36,4 @@
 ## Installed @mui/x-data-grid
 
     - Implemented data-grid with the api data
+    - added debounce search for smooth filtering
