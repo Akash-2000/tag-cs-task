@@ -37,3 +37,8 @@
 
     - Implemented data-grid with the api data
     - added debounce search for smooth filtering
+
+## Issues Fixed
+
+    - Fixed the Pagination issue in data-grid
+    - Fixed UI-bugs add enhanced UI for better UX

@@ -1,15 +1,23 @@
-import { Box, AppBar, Button, Toolbar, Typography } from "@mui/material";
+import {
+  Box,
+  AppBar,
+  Toolbar,
+  Typography,
+  Tooltip,
+  IconButton,
+} from "@mui/material";
 import { useSelector, useDispatch } from "react-redux";
+import LogoutIcon from "@mui/icons-material/Logout";
 
 import useFetchPosts from "../Hooks/useFetchPosts";
 import { logOut } from "../redux/userSlice.js";
+
 import PostsTable from "../components/PostsTable.jsx";
 
 const Dashboard = () => {
   const user = useSelector((state) => state.user.user.username);
   const dispatch = useDispatch();
   const { data, loading, error } = useFetchPosts();
-  console.log(data, loading, error);
 
   const handleLogout = () => {
     dispatch(logOut());
@@ -21,9 +29,11 @@ const Dashboard = () => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Welcome {user}
           </Typography>
-          <Button color="inherit" onClick={handleLogout}>
-            Logout
-          </Button>
+          <Tooltip title="Logout" arrow>
+            <IconButton size="large" onClick={handleLogout} disableFocusRipple>
+              <LogoutIcon sx={{ color: "white" }} />
+            </IconButton>
+          </Tooltip>
         </Toolbar>
       </AppBar>
       <PostsTable data={data} loading={loading} error={error} />
